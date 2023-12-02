@@ -12,6 +12,36 @@ black = "^23.11.0"
 isort = "^5.12.0"
 flake8 = "^6.1.0"
 pre-commit = "^3.5.0"
+nbqa = "^1.7.1"
+
+[tool.black]
+line-length = 90
+target-version = ["py39"]
+
+[tool.isort]
+src_paths = ["ds-project"]
+profile = "black"
+line_lenght = 90
+line_after_imports = 90
+
+[tool.flake8]
+max-line-length = 90
+
+[tool.nbqa.config]
+black = "pyproject.toml"
+isort = "pyproject.toml"
+flake8 = "pyproject.toml"
+
+[tool.nbqa.exclude]
+flake8 = "^.ipynb_checkpoints/"
+isort = "^.ipynb_checkpoints/"
+black = "^.ipynb_checkpoints/"
+[tool.nbqa.addopts]
+flake8 = ["--extend-ignore=E402"] # Игнорируем импорт не в начале ноутбука
+
+[tool.nbqa.mutate]
+black = 1
+isort = 1
 
 
 [build-system]
