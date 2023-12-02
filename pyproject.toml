@@ -36,6 +36,7 @@ flake8 = "pyproject.toml"
 flake8 = "^.ipynb_checkpoints/"
 isort = "^.ipynb_checkpoints/"
 black = "^.ipynb_checkpoints/"
+
 [tool.nbqa.addopts]
 flake8 = ["--extend-ignore=E402"] # Игнорируем импорт не в начале ноутбука
 
